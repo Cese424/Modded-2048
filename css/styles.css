@@ -1,0 +1,276 @@
+@import url("Clear-Sans.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "clear_sansregular", sans-serif;
+}
+
+body {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-size: 5.5vmin;
+}
+
+.header {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+
+  position: fixed;
+  display: flex;
+  top: 2vmin;
+  width: 81vmin;
+}
+
+#scoreContainer {
+  text-align: center;
+  font-family: "clear_sans_lightregular";
+  position: absolute;
+  font-size: 3vmin;
+  margin: 0;
+  background-color: #AAA;
+  border-radius: 1vmin;
+  padding: .2vmin .7vmin;
+}
+
+#score {
+  font-family: "clear_sansbold";
+}
+
+#title {
+  text-align: center;
+  position: relative;
+  margin: 0 auto;
+  color: #AAA;
+  font-size: 8vmin;
+}
+
+#game-board {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+
+  margin-top: 12vmin;
+  display: grid;
+  grid-template-columns: repeat(var(--grid-size), var(--cell-size));
+  grid-template-rows: repeat(var(--grid-size), var(--cell-size));
+  background-color: #CCC;
+  gap: var(--cell-gap);
+  border-radius: 1vmin;
+  padding: var(--cell-gap);
+  position: relative;
+}
+
+.cell {
+  background-color: #AAA;
+  border-radius: 1vmin;
+}
+
+.tile {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--cell-size);
+  height: var(--cell-size);
+  background-color: red;
+  border-radius: 1vmin;
+  top: calc(var(--y) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  left: calc(var(--x) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  font-weight: bold;
+  background-color: hsl(200, 50%, var(--background-lightness));
+  color: hsl(200, 25%, var(--text-lightness));
+  animation: show 200ms ease-in-out;
+  transition: 100ms ease-in-out;
+}
+
+.quests {
+  user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  
+  position: absolute;
+  left: 15vmin;
+  background-color: #aaa;
+  border-radius: 3vmin;
+  padding: 0 1.5vmin;
+  text-align: center;
+  font-family: "clear_sansbold";
+  font-size: 8vmin;
+  width: 40vmin;
+}
+
+#questTxt{
+  font-family: "clear_sansregular";
+  margin: 2vmin 0;
+  font-size: 5vmin;
+}
+
+#gameEnd {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 80.5vmin;
+  height: 80.5vmin;
+  background-color: rgba(129, 129, 129, 0.7);
+  z-index: 3;
+  border-radius: 1vmin;
+}
+
+.gameEndAnim {
+  animation: gameOver 300ms forwards;
+}
+
+.retry {
+  font-size: 5vmin;
+  border: none;
+  padding: 1vmin;
+  border-radius: 1vmin;
+  background-color: #AAA;
+  box-shadow: .3vmin .3vmin 0.5vmin rgba(0, 0, 0, 0.2);
+}
+
+.retry:hover {
+  background-color: rgb(160, 160, 160);
+  box-shadow: .5vmin .5vmin 0.5vmin rgba(0, 0, 0, 0.3);
+}
+
+#gameOverText {
+  color: rgb(29, 29, 29);
+  text-align: center;
+  font-weight: bold;
+}
+
+#titleScore {
+  font-weight: normal;
+  height: 8vmin;
+}
+
+.titleScore::after {
+  content: "";
+  animation: titleScore 3s forwards;
+}
+
+@media screen and (max-width: 500px) {
+
+  .header {
+    position: fixed;
+    display: flex;
+    top: 2vmin;
+    width: 81vmin;
+    height: 40vmin;
+  }
+
+  #scoreContainer {
+    text-align: center;
+    font-family: "clear_sans_lightregular";
+    position: absolute;
+    font-size: 4.5vmin;
+    margin: 0;
+    background-color: #AAA;
+    border-radius: 2vmin;
+    padding: .6vmin 1vmin;
+  }
+
+  #score {
+    font-size: 5.5vmin;
+  }
+  
+  #title {
+    font-family: "clear_sans_mediumregular";
+    text-align: center;
+    position: absolute;
+    right: 0;
+    color: #AAA;
+    font-size: 11vmin;
+  }
+
+  .quests {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    bottom: 3%;
+    background-color: #aaa;
+    border-radius: 3vmin;
+    padding: 0 1.5vmin;
+    text-align: center;
+    font-family: "clear_sansbold";
+    font-size: 10vmin;
+    width: 60vmin;
+  }
+  
+  #questTxt{
+    font-family: "clear_sansregular";
+    margin: 2vmin 0;
+    font-size: 5vmin;
+  }
+}
+
+@keyframes show {
+  0% {
+    opacity: .5;
+    transform: scale(0);
+  }
+}
+
+@keyframes titleScore {
+  0% {
+    opacity: 0;
+  }
+
+  10%,
+  29% {
+    content: ".";
+    opacity: 1;
+  }
+
+  30%,
+  49% {
+    content: "..";
+  }
+
+  50%,
+  69% {
+    content: "...";
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0;
+  }
+
+  80% {
+    opacity: 0;
+    content: var(--over-title);
+  }
+
+  100% {
+    opacity: 1;
+    content: var(--over-title);
+  }
+
+}
+
+@keyframes gameOver {
+  0% {
+    opacity: .5;
+    transform: scale(0.3);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

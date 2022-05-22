@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2048</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="script.js" type="module"></script>
+</head>
+
+<body>
+  <div class="header">
+    <div id="title">Moded 2048</div>
+    <div id="scoreContainer"> score: <div id="score">0</div>
+    </div>
+  </div>
+
+  <div class="quests">Quest:
+    <p id="questTxt">Your quest is to get a <span id="price">16</span> in less than <span id="roundsLeft">20</span> moves.
+    </p>
+  </div>
+
+  <div id="game-board">
+    <div id="gameEnd">
+      <div id="gameOverText"> Your score was: <span id="gameOverScore"></span>
+        <div id="titleScore"></div>
+      </div>
+      <button class="retry" onclick="history.go(0)">Retry</button>
+    </div>
+  </div>
+
+</body>
+
+</html>
