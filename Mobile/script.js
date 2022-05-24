@@ -13,21 +13,16 @@ setupInput()
 
 function setupInput() {
 
-  document.addEventListener('swiped', function(e) {
-    if (e.target == document.querySelector('.swipeArea')) {
-      handleInput(e)
-    }
+  document.addEventListener('swiped', handleInput, {
+    once: true
     //"e.target" --> element that was swiped
     //"e.detail.dir" --> swipe direction
   });
 
-  window.addEventListener("keydown", handleInput, {
-    once: true
-  })
-
 }
 
 async function handleInput(e) {
+  if (e.target == document.querySelector('.swipeArea')) {
   switch (e.detail.dir) {
     case "up":
       if (!canMoveUp()) {
@@ -60,6 +55,7 @@ async function handleInput(e) {
     default:
       setupInput()
       return
+    }
   }
 
   grid.cells.forEach(cell => cell.mergeTiles())
