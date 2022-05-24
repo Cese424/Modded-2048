@@ -48,7 +48,9 @@ export default class Grid {
   }
 }
 
-class Cell {
+export let PRICE = 16
+
+  class Cell {
   #cellElement
   #x
   #y
@@ -99,11 +101,18 @@ class Cell {
   }
 
   mergeTiles() {
-    if (this.tile == null || this.mergeTile == null) return
+    if (this.tile == null || this.mergeTile == null) return;
     this.tile.value = this.tile.value + this.mergeTile.value
     this.mergeTile.remove()
     this.mergeTile = null
+
+    if (this.tile.value == PRICE) {
+      PRICE = PRICE * 2
+      this.tile.remove()
+      this.tile = null
+    }
   }
+
 }
 
 function createCellElements(gridElement) {

@@ -99,20 +99,34 @@ body {
   -webkit-user-select: none;
   
   position: absolute;
-  left: 15vmin;
+  left: 7vmin;
   background-color: #aaa;
   border-radius: 3vmin;
   padding: 0 1.5vmin;
   text-align: center;
   font-family: "clear_sansbold";
   font-size: 8vmin;
-  width: 40vmin;
+  width: 50vmin;
 }
 
 #questTxt{
   font-family: "clear_sansregular";
-  margin: 2vmin 0;
+  margin: 1vmin 0;
+  font-size: 4vmin;
+}
+
+#dificulty {
+  font-family: "clear_sansbold";
+  margin: 1vmin 0;
   font-size: 5vmin;
+}
+
+#dificultyLevel {
+  font-family: "clear_sans_mediumregular";
+  color: #19A328;
+}
+#price, #roundsLeft {
+  font-family: "clear_sansbold";
 }
 
 #gameEnd {
@@ -125,7 +139,7 @@ body {
   width: 80.5vmin;
   height: 80.5vmin;
   background-color: rgba(129, 129, 129, 0.7);
-  z-index: 3;
+  z-index: -1;
   border-radius: 1vmin;
 }
 
@@ -133,7 +147,7 @@ body {
   animation: gameOver 300ms forwards;
 }
 
-.retry {
+#retry {
   font-size: 5vmin;
   border: none;
   padding: 1vmin;
@@ -142,7 +156,7 @@ body {
   box-shadow: .3vmin .3vmin 0.5vmin rgba(0, 0, 0, 0.2);
 }
 
-.retry:hover {
+#retry:hover {
   background-color: rgb(160, 160, 160);
   box-shadow: .5vmin .5vmin 0.5vmin rgba(0, 0, 0, 0.3);
 }
