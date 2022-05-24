@@ -13,7 +13,7 @@ body {
   position: relative;
   height: 100vh;
   margin: 0;
-  font-size: 5.5vmin;
+  font-size: 4.5vmin;
 }
 
 .header {
@@ -23,34 +23,42 @@ body {
   -webkit-user-select: none;
 
   position: absolute;
-  display: flex;
   top: 2%;
   left: 50%;
   transform: translate(-50%);
-  width: 81vmin;
+  width: 100%;
 }
 
 #scoreContainer {
   text-align: center;
   font-family: "clear_sans_lightregular";
   position: absolute;
-  font-size: 3vmin;
-  margin: 0;
+  font-size: 6vmin;
+  left: 50%;
+  transform: translate(-50%);
+  margin-top: 1vmin;
   background-color: #AAA;
-  border-radius: 1vmin;
+  border-radius: 1.5vmin;
   padding: .2vmin .7vmin;
 }
 
 #score {
   font-family: "clear_sansbold";
+  font-size: 7vmin;
 }
 
 #title {
   text-align: center;
   position: relative;
-  margin: 0 auto;
   color: #AAA;
-  font-size: 8vmin;
+  font-size: 14vmin;
+}
+
+.swipeArea {
+  position: absolute;
+  width: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  height: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
+  z-index: 1000;
 }
 
 #game-board {
@@ -100,21 +108,21 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
-  
+
   position: absolute;
-  right: 97.5%;
-  top: 50%;
-  transform: translate(100%, -50%);
+  right: 50%;
+  bottom: 65%;
+  transform: translate(50%);
   background-color: #aaa;
   border-radius: 3vmin;
   padding: 0 1.5vmin;
   text-align: center;
   font-family: "clear_sansbold";
   font-size: 8vmin;
-  width: 50vmin;
+  width: 70vmin;
 }
 
-#questTxt{
+#questTxt {
   font-family: "clear_sansregular";
   margin: 1vmin 0;
   font-size: 4vmin;
@@ -130,7 +138,9 @@ body {
   font-family: "clear_sans_mediumregular";
   color: #19A328;
 }
-#price, #roundsLeft {
+
+#price,
+#roundsLeft {
   font-family: "clear_sansbold";
 }
 
@@ -180,6 +190,24 @@ body {
 .titleScore::after {
   content: "";
   animation: titleScore 3s forwards;
+}
+
+.howToPlay { 
+  text-align: center;
+  position: absolute;
+  font-size: 7vmin;
+  bottom: 1%;
+  left: 50%;
+  transform: translate(-50%);
+  color: #aaa;
+  border-radius: 1vmin;
+  width: 100%;
+  font-family: "clear_sansbold";
+}
+
+#htpText {
+  font-size: 4vmin;
+  font-family: "clear_sansregular";
 }
 
 @keyframes show {
