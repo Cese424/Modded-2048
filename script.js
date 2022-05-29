@@ -217,19 +217,19 @@ function defineTitleScore() {
     titlesScore = titles[6]
   } else if (score < 600) {
     titlesScore = titles[7]
-  } else if (score < 700) {
+  } else if (score < 750) {
     titlesScore = titles[8]
-  } else if (score < 800) {
+  } else if (score < 900) {
     titlesScore = titles[9]
-  } else if (score < 1000) {
+  } else if (score < 1200) {
     titlesScore = titles[10]
-  } else if (score < 1500) {
-    titlesScore = titles[11]
   } else if (score < 1700) {
+    titlesScore = titles[11]
+  } else if (score < 2000) {
     titlesScore = titles[12]
-  } else if (score < 2048) {
+  } else if (score < 2700) {
     titlesScore = titles[13]
-  } else if (score > 2048) {
+  } else if (score > 2700) {
     titlesScore = titles[14]
   }
 
@@ -261,12 +261,12 @@ function questConfig() {
       dificulty.style.color = "#FFCC00"
     }
     else if (PRICE == 1024) {
-      rounds = Math.floor(PRICE / 4)
+      rounds = Math.floor(PRICE / 3)
       dificulty.innerHTML = "hard"
       dificulty.style.color = "#a80f0f"
     }
     else if (PRICE > 1024) {
-      rounds = Math.floor(PRICE / 6)
+      rounds = Math.floor(PRICE / 4.5)
       dificulty.innerHTML = "impossible"
       dificulty.style.color = "#640ba3"
     }
