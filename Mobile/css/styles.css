@@ -8,12 +8,14 @@
 }
 
 body {
+  overflow: hidden !important;
   background-color: #333;
   display: flex;
-  position: relative;
+  position: absolute;
   height: 100vh;
-  margin: 0;
+  width: 100vw;
   font-size: 4.5vmin;
+  margin: 0;
 }
 
 .header {
@@ -67,6 +69,7 @@ body {
 
 .swipeArea {
   position: absolute;
+  touch-action: none;
   width: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   height: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   z-index: 1000;

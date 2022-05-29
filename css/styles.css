@@ -32,7 +32,7 @@ body {
 
 #scoreContainer {
   text-align: center;
-  font-family: "clear_sans_lightregular";
+  font-family: "clear_sans_lightregular", arial;
   position: absolute;
   font-size: 3vmin;
   margin: 0;
@@ -42,7 +42,7 @@ body {
 }
 
 #score {
-  font-family: "clear_sansbold";
+  font-family: "clear_sansbold", arial;
 }
 
 #title {
@@ -109,19 +109,19 @@ body {
   border-radius: 3vmin;
   padding: 0 1.5vmin;
   text-align: center;
-  font-family: "clear_sansbold";
+  font-family: "clear_sansbold", arial;
   font-size: 8vmin;
   width: 50vmin;
 }
 
 #questTxt{
-  font-family: "clear_sansregular";
+  font-family: "clear_sansregular", arial;
   margin: 1vmin 0;
   font-size: 4vmin;
 }
 
 #dificulty {
-  font-family: "clear_sansbold";
+  font-family: "clear_sansbold", arial;
   margin: 1vmin auto;
   font-size: 5vmin;
 }
@@ -131,7 +131,7 @@ body {
   color: #19A328;
 }
 #price, #roundsLeft {
-  font-family: "clear_sansbold";
+  font-family: "clear_sansbold", arial;
 }
 
 #gameEnd {
@@ -181,6 +181,29 @@ body {
   content: "";
   animation: titleScore 3s forwards;
 }
+
+.howToPlay {
+  border-top: 1vmin solid #AAA;
+  border-bottom: 1vmin solid #AAA;
+  position: absolute;
+  font-family: "clear_sansbold", arial;
+  border-radius: 1vmin;
+  text-align: center;
+  font-size: 4vmin;
+  background-color: #AAA;
+  width: 60vmin;
+  right: 2vmin;
+  top: 50%;
+  transform: translate(0, -50%);
+}
+
+#htpText {
+  margin: 0 2vmin;
+  text-align: justify;
+  font-size: 2vmin;
+  font-family: "clear_sans_mediumregular", arial;
+}
+
 
 @keyframes show {
   0% {
