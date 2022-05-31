@@ -1,6 +1,6 @@
-const GRID_SIZE = 6
-const CELL_SIZE = 6
-const CELL_GAP = 0.6
+const GRID_SIZE = 5
+const CELL_SIZE = 7
+const CELL_GAP = 0.7
 
 export default class Grid {
   #cells
