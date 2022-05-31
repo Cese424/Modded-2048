@@ -7,6 +7,7 @@ const gameBoard = document.getElementById("game-board")
 const grid = new Grid(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
+grid.randomEmptyCell().tile = new Tile(gameBoard)
 setupInput()
 
 function setupInput() {
@@ -59,13 +60,21 @@ async function handleInput(e) {
 
   const newTile = new Tile(gameBoard)
   grid.randomEmptyCell().tile = newTile
-
   if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
     newTile.waitForTransition(true).then(() => {
       moddedGameOver()
     })
     return
   }
+
+  // const newTile2 = new Tile(gameBoard)
+  // grid.randomEmptyCell().tile = newTile2
+  // if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+  //   newTile2.waitForTransition(true).then(() => {
+  //     moddedGameOver()
+  //   })
+  //   return
+  // }
 
   setupInput()
 }
