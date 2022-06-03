@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'clear_sansbold';
+    src:
+        url('fonts/clearsans_bold_macroman/ClearSans-Bold-webfont.woff') format('woff2'),
+        url('fonts/clearsans_bold_macroman/ClearSans-Bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'clear_sansbold_italic';
+    src:
+        url('fonts/clearsans_bolditalic_macroman/ClearSans-BoldItalic-webfont.woff') format('woff2'),
+        url('fonts/clearsans_bolditalic_macroman/ClearSans-BoldItalic-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'clear_sansitalic';
+    src:
+        url('fonts/clearsans_italic_macroman/ClearSans-Italic-webfont.woff') format('woff2'),
+        url('fonts/clearsans_italic_macroman/ClearSans-Italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'clear_sans_lightregular';
+    src:
+        url('fonts/clearsans_light_macroman/ClearSans-Light-webfont.woff') format('woff2'),
+        url('fonts/clearsans_light_macroman/ClearSans-Light-webfont.woff') format('woff');
+    font-weight: lighter;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'clear_sans_mediumregular';
+    src: 
+        url('fonts/clearsans_medium_macroman/ClearSans-Medium-webfont.woff') format('woff2'),
+        url('fonts/clearsans_medium_macroman/ClearSans-Medium-webfont.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'clear_sans_mediumitalic';
+    src: 
+        url('fonts/clearsans_mediumitalic_macroman/ClearSans-MediumItalic-webfont.woff') format('woff2'),
+        url('fonts/clearsans_mediumitalic_macroman/ClearSans-MediumItalic-webfont.woff') format('woff');
+    font-weight: medium;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'clear_sansregular';
+    src: 
+        url('fonts/clearsans_regular_macroman/ClearSans-Regular-webfont.woff') format('woff2'),
+        url('fonts/clearsans_regular_macroman/ClearSans-Regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'clear_sans_thinregular';
+    src:
+        url('fonts/clearsans_thin_macroman/ClearSans-Thin-webfont.woff') format('woff2'),
+        url('fonts/clearsans_thin_macroman/ClearSans-Thin-webfont.woff') format('woff');
+    font-weight: thin;
+    font-style: normal;
+
+}
