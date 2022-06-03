@@ -8,13 +8,27 @@
   <title>2048</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="script.js" type="module"></script>
+
+  <script type="text/javascript">
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+      // true for mobile device
+      window.location.href = "Mobile/";
+    } else {
+      // false for not mobile device
+    }
+  </script>
 </head>
 
 <body>
   <div class="header">
-    <div id="title">Moded 2048</div>
     <div id="scoreContainer"> score: <div id="score">0</div>
     </div>
+
+    <div id="title">Moded 2048</div>
+
+    <div id="hightScoreContaier"> best: <div id="hightScore">0</div>
+    </div>
+
   </div>
 
   <div id="game-board">
@@ -35,21 +49,12 @@
   <div class="howToPlay">
     How to play:
     <div id="htpText">
-        <p>1. Press the arrow key on the direction that you want move the tiles "🠈 🠉 🠊 🠋" </p>
-        <p>2. After pressed all the tiles will be pushed to the arrow direction</p>
-        <p>3. If two tiles of the same number get pushed together they will merge and their value will be doubled</p>
-        <p>4. Be careful with missions, if your remaining moves reach 0 you will lose</p>
+      <p>1. Press the arrow key on the direction that you want move the tiles</p>
+      <p>2. After pressed all the tiles will be pushed to the arrow direction</p>
+      <p>3. If two tiles of the same number get pushed together they will merge and their value will be doubled</p>
+      <p>4. Be careful with missions, if your remaining moves reach 0 you will lose</p>
     </div>
-</div>
-
-  <script type="text/javascript">
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      // true for mobile device
-      window.location.href = "Mobile/";
-    } else {
-      // false for not mobile device
-    }
-  </script>
+  </div>
 </body>
 
 </html>

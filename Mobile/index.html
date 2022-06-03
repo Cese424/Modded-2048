@@ -8,12 +8,23 @@
     <title>2048</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="script.js" type="module"></script>
+
+    <script type="text/javascript">
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // true for mobile device
+        } else {
+            // false for not mobile device
+            window.location.href = "../";
+        }
+    </script>
 </head>
 
 <body>
-        <div id="title">Moded 2048</div>
-        <div id="scoreContainer"> score: <div id="score">0</div>
-        </div>
+    <div id="title">Moded 2048</div>
+    <div id="scoreContainer"> score: <div id="score">0</div>
+    </div>
+    <div id="hightScoreContaier"> best: <div id="hightScore">0</div>
+    </div>
 
 
     <div id="game-board">
@@ -35,21 +46,13 @@
     <div class="howToPlay">
         How to play:
         <div id="htpText">
-            1. Swipe your finger on the grid to the direction that you want to move <br>
-            2. When you swipe all the tiles will be pushed to the swiped direction<br>
-            3. If two tiles of the same number get pushed together they will merge and their value will be doubled<br>
-            4. Be careful with missions, if your remaining moves reach 0 you will lose
+            <p>1. Swipe your finger on the grid to the direction that you want to move</p>
+            <p>2. When you swipe all the tiles will be pushed to the swiped direction</p>
+            <p>3. If two tiles of the same number get pushed together they will merge and their value will be doubled
+            </p>
+            <p>4. Be careful with missions, if your remaining moves reach 0 you will lose</p>
         </div>
     </div>
-
-    <script type="text/javascript">
-        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-            // true for mobile device
-        } else {
-            // false for not mobile device
-            window.location.href = "../";
-        }
-    </script>
 </body>
 
 </html>

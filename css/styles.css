@@ -13,7 +13,7 @@ body {
   position: relative;
   height: 100vh;
   margin: 0;
-  font-size: 5.5vmin;
+  font-size: 2.75vw;
 }
 
 .header {
@@ -23,34 +23,49 @@ body {
   -webkit-user-select: none;
 
   position: absolute;
+  align-items: center;
   display: flex;
   top: 2%;
   left: 50%;
-  transform: translate(-50%);
-  width: 81vmin;
+  transform: translateX(-50%);
+  width: 40vw;
 }
 
 #scoreContainer {
   text-align: center;
   font-family: "clear_sans_lightregular", arial;
-  position: absolute;
-  font-size: 3vmin;
+  position: relative;
+  font-size: 1.5vw;
   margin: 0;
   background-color: #AAA;
-  border-radius: 1vmin;
-  padding: .2vmin .7vmin;
+  border-radius: 0.5vw;
+  padding: .1vw .35vw;
 }
 
-#score {
+#score, #hightScore {
   font-family: "clear_sansbold", arial;
 }
+
+#hightScoreContaier{
+  text-align: center;
+  font-family: "clear_sans_lightregular", arial;
+  position: relative;
+  font-size: 1.5vw;
+  right: 0vw;
+  margin: 0;
+  background-color: #AAA;
+  border-radius: 0.5vw;
+  padding: .1vw .35vw;
+}
+
+
 
 #title {
   text-align: center;
   position: relative;
   margin: 0 auto;
   color: #AAA;
-  font-size: 8vmin;
+  font-size: 4vw;
 }
 
 #game-board {
@@ -102,28 +117,28 @@ body {
   -webkit-user-select: none;
   
   position: absolute;
-  right: 97.5%;
-  top: 50%;
-  transform: translate(100%, -50%);
+  left: 2vw;
+  top: 50vh;
+  transform: translateY(-50%);
   background-color: #aaa;
   border-radius: 3vmin;
   padding: 0 1.5vmin;
   text-align: center;
   font-family: "clear_sansbold", arial;
-  font-size: 8vmin;
-  width: 50vmin;
+  font-size: 4vw;
+  width: 25vw;
 }
 
 #questTxt{
   font-family: "clear_sansregular", arial;
   margin: 1vmin 0;
-  font-size: 4vmin;
+  font-size: 2vw;
 }
 
 #dificulty {
   font-family: "clear_sansbold", arial;
   margin: 1vmin auto;
-  font-size: 5vmin;
+  font-size: 2.5vw;
 }
 
 #dificultyLevel {
@@ -153,17 +168,17 @@ body {
 }
 
 #retry {
-  font-size: 5vmin;
+  font-size: 2.5vw;
   border: none;
-  padding: 1vmin;
-  border-radius: 1vmin;
+  padding: 0.5vw;
+  border-radius: 0.5vw;
   background-color: #AAA;
-  box-shadow: .3vmin .3vmin 0.5vmin rgba(0, 0, 0, 0.2);
+  box-shadow: .15vw .15vw .25vw rgba(0, 0, 0, 0.2);
 }
 
 #retry:hover {
   background-color: rgb(160, 160, 160);
-  box-shadow: .5vmin .5vmin 0.5vmin rgba(0, 0, 0, 0.3);
+  box-shadow: .25vw .25vw .25vw rgba(0, 0, 0, 0.3);
 }
 
 #gameOverText {
@@ -174,7 +189,7 @@ body {
 
 #titleScore {
   font-weight: normal;
-  height: 8vmin;
+  height: 4vw;
 }
 
 .titleScore::after {
@@ -183,24 +198,24 @@ body {
 }
 
 .howToPlay {
-  border-top: 1vmin solid #AAA;
-  border-bottom: 1vmin solid #AAA;
+  border-top: 0.5vh solid #AAA;
+  border-bottom: 0.5vw solid #AAA;
   position: absolute;
   font-family: "clear_sansbold", arial;
   border-radius: 1vmin;
   text-align: center;
-  font-size: 4vmin;
+  font-size: 2vw;
   background-color: #AAA;
-  width: 60vmin;
-  right: 2vmin;
+  width: 27vw;
+  right: 1vw;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translateY(-50%);
 }
 
 #htpText {
   margin: 0 2vmin;
   text-align: justify;
-  font-size: 2vmin;
+  font-size: 1vw;
   font-family: "clear_sans_mediumregular", arial;
 }
 

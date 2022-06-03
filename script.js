@@ -1,10 +1,22 @@
-import Grid, {PRICE} from "./Grid.js"
+import Grid, {
+  PRICE
+} from "./Grid.js"
 import Tile from "./Tile.js"
 
 const gameBoard = document.getElementById("game-board")
 
+if (typeof (Storage) !== "undefined") {
+  if (localStorage.getItem("bestScoreSaved") != null) {
+    document.getElementById("hightScore").innerHTML = localStorage.getItem("bestScoreSaved");
+  } else {
+    document.getElementById("hightScore").innerHTML = 0
+  }
+} else {
+  document.getElementById("hightScore").innerHTML = 0
+}
 
 const grid = new Grid(gameBoard)
+grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 setupInput()
@@ -65,6 +77,21 @@ async function handleInput(e) {
       moddedGameOver()
     })
     return
+  }
+
+
+
+  if (grid.randomEmptyCell() != null) {
+
+    const newTile2 = new Tile(gameBoard)
+    grid.randomEmptyCell().tile = newTile2
+
+    if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
+      newTile2.waitForTransition(true).then(() => {
+        moddedGameOver()
+      })
+      return
+    }
   }
 
   setupInput()
@@ -193,43 +220,50 @@ function moddedGameOver() {
     history.go(0)
   }
 
-
+  if (score >= document.getElementById("hightScore").innerHTML) {
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("bestScoreSaved", score)
+    } else {
+      return
+    }
+    document.getElementById("hightScore").innerHTML = score
+  }
 }
 
 //define the final message based on your score
 function defineTitleScore() {
   var titlesScore;
-  const titles = ["You are wasting my time", "You are too bad", "Oof", "Bad", "Meh", "Hmm", "Uh", "Good", "Wow", "Awsome", "Perfect", "WTF?", "STOP!!!", "Are you god???", "Ok, im done!"]
+  const titles = ["You are wasting my time", "You are too bad", "Oof", "Bad", "Uhh", "Not that bad", "Close to good", "Good", "Wow", "Awsome", "Perfect", "WTF?", "STOP!!!", "Are you god???", "Ok, im done!"]
 
   if (score < 30) {
     titlesScore = titles[0]
   } else if (score < 60) {
     titlesScore = titles[1]
-  } else if (score < 120) {
+  } else if (score < 90) {
     titlesScore = titles[2]
-  } else if (score < 200) {
+  } else if (score < 135) {
     titlesScore = titles[3]
-  } else if (score < 300) {
+  } else if (score < 200) {
     titlesScore = titles[4]
-  } else if (score < 400) {
+  } else if (score < 300) {
     titlesScore = titles[5]
-  } else if (score < 500) {
+  } else if (score < 400) {
     titlesScore = titles[6]
-  } else if (score < 600) {
+  } else if (score < 500) {
     titlesScore = titles[7]
-  } else if (score < 750) {
+  } else if (score < 700) {
     titlesScore = titles[8]
-  } else if (score < 900) {
+  } else if (score < 800) {
     titlesScore = titles[9]
-  } else if (score < 1200) {
+  } else if (score < 950) {
     titlesScore = titles[10]
-  } else if (score < 1700) {
+  } else if (score < 1150) {
     titlesScore = titles[11]
-  } else if (score < 2000) {
+  } else if (score < 1400) {
     titlesScore = titles[12]
-  } else if (score < 2700) {
+  } else if (score < 1650) {
     titlesScore = titles[13]
-  } else if (score > 2700) {
+  } else if (score > 1650) {
     titlesScore = titles[14]
   }
 
@@ -241,32 +275,41 @@ function defineTitleScore() {
 //convert new price in rounds "currency"
 var oldprice = 16
 const dificulty = document.getElementById("dificultyLevel");
+
 function questConfig() {
-  if (oldprice != PRICE){
+  if (oldprice != PRICE) {
     oldprice = oldprice * 2
 
     if (PRICE <= 64) {
-      rounds = PRICE
+      rounds = Math.floor(PRICE / 1.5)
       dificulty.innerHTML = "easy"
       dificulty.style.color = "#19A328"
-    }
-    else if (PRICE == 128) {
-      rounds = Math.floor(PRICE / 1.7)
+    } else if (PRICE == 128) {
+      rounds = 60
       dificulty.innerHTML = "medium"
       dificulty.style.color = "#FFCC00"
-    }
-    else if (PRICE <= 512) {
-      rounds = Math.floor(PRICE / 2)
+    } else if (PRICE == 256) {
+      rounds = 90
       dificulty.innerHTML = "medium"
       dificulty.style.color = "#FFCC00"
-    }
-    else if (PRICE == 1024) {
-      rounds = Math.floor(PRICE / 3)
+    } else if (PRICE == 512) {
+      rounds = 160
+      dificulty.innerHTML = "medium"
+      dificulty.style.color = "#FFCC00"
+    } else if (PRICE == 1024) {
+      rounds = 240
       dificulty.innerHTML = "hard"
       dificulty.style.color = "#a80f0f"
-    }
-    else if (PRICE > 1024) {
-      rounds = Math.floor(PRICE / 4.5)
+    } else if (PRICE == 2048) {
+      rounds = 400
+      dificulty.innerHTML = "impossible"
+      dificulty.style.color = "#640ba3"
+    } else if (PRICE == 4096) {
+      rounds = 700
+      dificulty.innerHTML = "impossible"
+      dificulty.style.color = "#640ba3"
+    } else if (PRICE >= 8192) {
+      rounds = Math.floor(PRICE / 7)
       dificulty.innerHTML = "impossible"
       dificulty.style.color = "#640ba3"
     }
