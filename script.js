@@ -230,6 +230,11 @@ function moddedGameOver() {
   }
 }
 
+//Check if user want to leave
+window.onbeforeunload = function(){
+  return 'Are you sure you want to leave?';
+};
+
 //define the final message based on your score
 function defineTitleScore() {
   var titlesScore;
