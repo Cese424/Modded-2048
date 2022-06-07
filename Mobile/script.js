@@ -129,24 +129,24 @@ async function handleInput(e) {
         setupInput()
         return
     }
-    
+
     grid.cells.forEach(cell => cell.mergeTiles())
-    
+
     const newTile = new Tile(gameBoard)
     grid.randomEmptyCell().tile = newTile
-    
+
     if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
       newTile.waitForTransition(true).then(() => {
         moddedGameOver()
       })
       return
     }
-    
+
     if (grid.randomEmptyCell() != null) {
 
       const newTile2 = new Tile(gameBoard)
       grid.randomEmptyCell().tile = newTile2
-  
+
       if (!canMoveUp() && !canMoveDown() && !canMoveLeft() && !canMoveRight()) {
         newTile2.waitForTransition(true).then(() => {
           moddedGameOver()
@@ -155,8 +155,8 @@ async function handleInput(e) {
       }
     }
   }
-    
-    setupInput()
+
+  setupInput()
 }
 
 function moveUp() {
@@ -290,9 +290,23 @@ function moddedGameOver() {
     }
     document.getElementById("hightScore").innerHTML = score
   }
-
-
 }
+
+//Check if user want to leave
+window.onbeforeunload = function(){
+  return 'Are you sure you want to leave?';
+};
+
+function saveBestOnReload() {
+  if (typeof (Storage) !== "undefined") {
+    localStorage.setItem("bestScoreSaved", score)
+  } else {
+    return
+  }
+  document.location.reload();
+}
+
+
 
 //define the final message based on your score
 function defineTitleScore() {
