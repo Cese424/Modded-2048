@@ -2,60 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Modded 2048</title>
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="script.js" type="module"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modded 2048</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="script.js" type="module"></script>
 
-  <script type="text/javascript">
-    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-      // true for mobile device
-      window.location.href = "Mobile/";
-    } else {
-      // false for not mobile device
-    }
-  </script>
+    <script type="text/javascript">
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            // true for mobile device
+        } else {
+            // false for not mobile device
+            window.location.href = "../";
+        }
+    </script>
 </head>
 
 <body>
-  <div class="header">
+    <div id="title">Moded 2048</div>
     <div id="scoreContainer"> score: <div id="score">0</div>
     </div>
-
-    <div id="title">Moded 2048</div>
-
     <div id="hightScoreContaier"> best: <div id="hightScore">0</div>
     </div>
 
-  </div>
 
-  <div id="game-board">
-    <div id="gameEnd">
-      <div id="gameOverText"> Your score was: <span id="gameOverScore"></span>
-        <div id="titleScore"></div>
-      </div>
-      <button id="retry" onclick="">Retry</button>
+    <div id="game-board">
+        <div class="swipeArea"></div>
+        <div id="gameEnd">
+            <div id="gameOverText"> Your score was: <span id="gameOverScore"></span>
+                <div id="titleScore"></div>
+            </div>
+            <button id="retry" onclick="">Retry</button>
+        </div>
     </div>
-  </div>
 
-  <div class="quests">Quest: <div id="dificulty">Dificulty: <span id="dificultyLevel">easy</span></div>
-    <p id="questTxt">Your quest is to get a <span id="price">16</span> in less than <span id="roundsLeft">20</span>
-      moves.
-    </p>
-  </div>
-
-  <div class="howToPlay">
-    How to play:
-    <div id="htpText">
-      <p>1. Press the arrow key on the direction that you want move the tiles</p>
-      <p>2. After pressed all the tiles will be pushed to the arrow direction</p>
-      <p>3. If two tiles of the same number get pushed together they will merge and their value will be doubled</p>
-      <p>4. Be careful with missions, if your remaining moves reach 0 you will lose</p>
+    <div class="quests">Quest: <div id="dificulty">Dificulty: <span id="dificultyLevel">easy</span></div>
+        <p id="questTxt">Your quest is to get a <span id="price">16</span> in less than <span id="roundsLeft">20</span>
+            moves.
+        </p>
     </div>
-  </div>
+
+    <div class="howToPlay">
+        How to play:
+        <div id="htpText">
+            <p>1. Swipe your finger on the grid to the direction that you want to move</p>
+            <p>2. When you swipe all the tiles will be pushed to the swiped direction</p>
+            <p>3. If two tiles of the same number get pushed together they will merge and their value will be doubled
+            </p>
+            <p>4. Be careful with missions, if your remaining moves reach 0 you will lose</p>
+        </div>
+    </div>
 </body>
 
 </html>
