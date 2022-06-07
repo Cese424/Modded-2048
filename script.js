@@ -94,26 +94,24 @@ async function handleInput(e) {
     }
   }
 
+  gameMod()
+
   setupInput()
 }
 
 function moveUp() {
-  gameMod()
   return slideTiles(grid.cellsByColumn)
 }
 
 function moveDown() {
-  gameMod()
   return slideTiles(grid.cellsByColumn.map(column => [...column].reverse()))
 }
 
 function moveLeft() {
-  gameMod()
   return slideTiles(grid.cellsByRow)
 }
 
 function moveRight() {
-  gameMod()
   return slideTiles(grid.cellsByRow.map(row => [...row].reverse()))
 }
 
@@ -186,14 +184,14 @@ function gameMod() {
 
   questConfig()
 
-  scoreId.innerHTML = score
-  priceId.innerHTML = PRICE
-  roundsId.innerHTML = rounds
-
-  if (rounds <= 0) {
+  if (rounds < 0) {
     moddedGameOver()
     return
   }
+
+  scoreId.innerHTML = score
+  priceId.innerHTML = PRICE
+  roundsId.innerHTML = rounds
 }
 
 //Game over function
@@ -278,7 +276,7 @@ function defineTitleScore() {
 }
 
 //convert new price in rounds "currency"
-var oldprice = 16
+let oldprice = 16
 const dificulty = document.getElementById("dificultyLevel");
 
 function questConfig() {
