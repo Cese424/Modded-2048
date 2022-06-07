@@ -30,13 +30,13 @@ export default class Tile {
       `${backgroundLightness <= 50 ? 90 : 10}%`
     )
     if (v >= 100000) {
-      this.#tileElement.style.fontSize = "1.5vmin"
+      this.#tileElement.style.fontSize = "1,25vw"
     }
     else if (v >= 10000) {
-      this.#tileElement.style.fontSize = "2.5vmin"
+      this.#tileElement.style.fontSize = "1.75vw"
     }
     else if (v >= 1000) {
-      this.#tileElement.style.fontSize = "3.5vmin"
+      this.#tileElement.style.fontSize = "2.25vw"
     }
   }
 

@@ -1,14 +1,14 @@
 const GRID_SIZE = 6
-const CELL_SIZE = 5.5
-const CELL_GAP = .55
+const CELL_SIZE = 6
+const CELL_GAP = 0.6
 
 export default class Grid {
   #cells
 
   constructor(gridElement) {
     gridElement.style.setProperty("--grid-size", GRID_SIZE)
-    gridElement.style.setProperty("--cell-size", `${CELL_SIZE}vh`)
-    gridElement.style.setProperty("--cell-gap", `${CELL_GAP}vh`)
+    gridElement.style.setProperty("--cell-size", `${CELL_SIZE}vw`)
+    gridElement.style.setProperty("--cell-gap", `${CELL_GAP}vw`)
     this.#cells = createCellElements(gridElement).map((cellElement, index) => {
       return new Cell(
         cellElement,
