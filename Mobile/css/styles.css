@@ -8,6 +8,7 @@
 }
 
 body {
+  overscroll-behavior-y: contain;
   background-color: #333;
   display: flex;
   position: absolute;
@@ -83,7 +84,7 @@ body {
   touch-action: none;
   width: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
   height: calc(var(--grid-size) * (var(--cell-size) + var(--cell-gap)) + var(--cell-gap));
-  z-index: 1000;
+  z-index: 50;
 }
 
 #game-board {
