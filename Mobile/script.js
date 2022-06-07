@@ -270,7 +270,7 @@ function moddedGameOver() {
 
   defineTitleScore()
 
-  document.getElementById("gameEnd").style.zIndex = 3
+  document.getElementById("gameEnd").style.zIndex = 100;
 
   document.getElementById("gameEnd").className = "gameEndAnim";
 
@@ -280,15 +280,15 @@ function moddedGameOver() {
 
   document.getElementById("retry").onclick = function () {
     history.go(0)
+  }
 
-    if (score >= document.getElementById("hightScore").innerHTML) {
-      if (typeof (Storage) !== "undefined") {
-        localStorage.setItem("bestScoreSaved", score)
-      } else {
-        return
-      }
-      document.getElementById("hightScore").innerHTML = score
+  if (score >= document.getElementById("hightScore").innerHTML) {
+    if (typeof (Storage) !== "undefined") {
+      localStorage.setItem("bestScoreSaved", score)
+    } else {
+      return
     }
+    document.getElementById("hightScore").innerHTML = score
   }
 
 
