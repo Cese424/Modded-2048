@@ -18,6 +18,7 @@ if (typeof (Storage) !== "undefined") {
 const grid = new Grid(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
 grid.randomEmptyCell().tile = new Tile(gameBoard)
+grid.randomEmptyCell().tile = new Tile(gameBoard)
 setupInput()
 
   ! function (t, e) {
